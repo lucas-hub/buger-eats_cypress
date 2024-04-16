@@ -12,3 +12,4 @@ Buger-Eats is a website for educational purposes aimed at utilizing Cypress in y
 Website link: https://buger-eats-qa.vercel.app/
 
 ![Cypress](https://img.shields.io/badge/Cypress-69D3A7.svg?style=for-the-badge&logo=Cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
