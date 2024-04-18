@@ -14,5 +14,15 @@ describe('Buger GUI Testing', ()=> {
         cy.get('input[name="city-uf"]').should('have.value', 'São Paulo/SP')
 
         cy.SendFile()
+
+        cy.get('.button-success').click()
+        cy.get('.swal2-popup').should('be.visible')
+        cy.get('.swal2-confirm').should('be.visible').click()
+    })
+
+    it('Incorreclty', ()=> {
+        cy.EnterLandingPage()
+
+        cy.FillIncorrectlyAndShowsErrorMessages()
     })
 })

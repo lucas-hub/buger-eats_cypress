@@ -20,8 +20,21 @@ Cypress.Commands.add('FillCorrectly', ()=> {
     cy.get('.delivery-method > :nth-child(1)').click()
 })
 
+Cypress.Commands.add('FillIncorrectlyAndShowsErrorMessages', ()=> {
+    cy.get('.button-success').click()    
+    
+    cy.get('input[value="Buscar CEP"]').click()
+    cy.contains('span', 'Informe um CEP válido').should('be.visible')
+    cy.contains('span', 'É necessário informar o número do endereço').should('be.visible')
+
+    cy.contains('span', 'É necessário informar o nome').should('be.visible')
+    cy.contains('span', 'É necessário informar o CPF').should('be.visible')
+    cy.contains('span', 'É necessário informar o email').should('be.visible')
+    cy.contains('span', 'Adicione uma foto da sua CNH').should('be.visible')
+})
+
 Cypress.Commands.add('SendFile', ()=> {
-    cy.get('input[type="file"]').invoke('show').click().selectFile('cypress/fixtures/example.json').should(($input) => {
-        expect($input[0].files[0].name).to.equal('example.json')
+    cy.get('input[type="file"]').invoke('show').click().selectFile('cypress/fixtures/foto.jpg').should(($input) => {
+        expect($input[0].files[0].name).to.equal('foto.jpg')
     }).should('have.length', 1)
 })
